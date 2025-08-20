@@ -44,16 +44,27 @@ const blogs = [
 
 export default function TallerCompletoPage() {
   return (
-    <main style={{ fontFamily: 'Arial, sans-serif', maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
-      <h1>Taller Listas en Next.js</h1>
+    <main
+      style={{
+        fontFamily: '"Segoe UI", Tahoma, sans-serif',
+        maxWidth: '800px',
+        margin: '0 auto',
+        padding: '20px',
+        backgroundColor: '#121212',
+        color: 'rgba(255,255,255,0.9)', // color base claro
+      }}
+    >
+      <h1 style={{ textAlign: 'center', margin: '40px 0', color: '#fff' }}>
+        Taller Listas en Next.js
+      </h1>
 
-      <section style={{ marginBottom: '40px', borderBottom: '2px solid #eee', paddingBottom: '20px' }}>
-        <h2>Ejercicio 1 - Lista de productos</h2>
+      <section style={{ marginBottom: '40px', borderBottom: '2px solid #333', paddingBottom: '20px' }}>
+        <h2 style={{ textAlign: 'center', margin: '30px 0', color: '#fff' }}>Ejercicio 1 - Lista de productos</h2>
         <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
           {productos.map((producto) => (
             <li key={producto.id}>
               <strong>{producto.nombre}</strong> - ${producto.precio}
-              <span style={{ color: '#555', marginLeft: '10px' }}>
+              <span style={{ color: 'rgba(255,255,255,0.7)', marginLeft: '10px' }}>
                 (Categoria: {producto.categoria.nombre})
               </span>
             </li>
@@ -61,13 +72,13 @@ export default function TallerCompletoPage() {
         </ul>
       </section>
 
-      <section style={{ marginBottom: '40px', borderBottom: '2px solid #eee', paddingBottom: '20px' }}>
-        <h2>Ejercicio 2 - Lista de usuarios</h2>
+      <section style={{ marginBottom: '40px', borderBottom: '2px solid #333', paddingBottom: '20px' }}>
+        <h2 style={{ textAlign: 'center', margin: '30px 0', color: '#fff' }}>Ejercicio 2 - Lista de usuarios</h2>
         <ul style={{ listStyleType: 'decimal', paddingLeft: '20px' }}>
           {usuarios.map((usuario) => (
             <li key={usuario.id}>
               <strong>{usuario.nombre}</strong>
-              <p style={{ margin: '5px 0 10px 20px', fontStyle: 'italic' }}>
+              <p style={{ margin: '5px 0 10px 20px', fontStyle: 'italic', color: 'rgba(255,255,255,0.8)' }}>
                 Dirección: {usuario.direccion.calle}, {usuario.direccion.ciudad}, {usuario.direccion.pais}
               </p>
             </li>
@@ -75,12 +86,12 @@ export default function TallerCompletoPage() {
         </ul>
       </section>
 
-      <section style={{ marginBottom: '40px', borderBottom: '2px solid #eee', paddingBottom: '20px' }}>
-        <h2>Ejercicio 3 - Lista de cursos</h2>
+      <section style={{ marginBottom: '40px', borderBottom: '2px solid #333', paddingBottom: '20px' }}>
+        <h2 style={{ textAlign: 'center', margin: '30px 0', color: '#fff' }}>Ejercicio 3 - Lista de cursos</h2>
         <div>
           {cursos.map((curso) => (
             <div key={curso.id} style={{ marginBottom: '15px' }}>
-              <h3>{curso.nombre}</h3>
+              <h3 style={{ textAlign: 'center', margin: '20px 0', color: '#fff' }}>{curso.nombre}</h3>
               <ul style={{ listStyleType: 'circle', paddingLeft: '40px', margin: 0 }}>
                 {curso.modulos.map((modulo, index) => (
                   <li key={index}>{modulo.nombre}</li>
@@ -91,18 +102,16 @@ export default function TallerCompletoPage() {
         </div>
       </section>
 
-      <section style={{ marginBottom: '40px', borderBottom: '2px solid #eee', paddingBottom: '20px' }}>
-        <h2>Ejercicio 4 - Lista de pedidos con productos</h2>
+      <section style={{ marginBottom: '40px', borderBottom: '2px solid #333', paddingBottom: '20px' }}>
+        <h2 style={{ textAlign: 'center', margin: '30px 0', color: '#fff' }}>Ejercicio 4 - Lista de pedidos con productos</h2>
         <div>
           {pedidos.map((pedido) => (
-            <div key={pedido.id} style={{ border: '1px solid #ccc', padding: '10px', marginBottom: '10px', borderRadius: '5px' }}>
-              <h3>Pedido de: {pedido.cliente}</h3>
-              <h4>Productos:</h4>
+            <div key={pedido.id} style={{ border: '1px solid #444', padding: '15px', marginBottom: '15px', borderRadius: '5px', backgroundColor: '#1e1e1e' }}>
+              <h3 style={{ textAlign: 'center', margin: '20px 0', color: '#fff' }}>Pedido de: {pedido.cliente}</h3>
+              <h4 style={{ margin: '10px 0', color: 'rgba(255,255,255,0.85)' }}>Productos:</h4>
               <ul>
                 {pedido.productos.map((producto, index) => (
-                  <li key={index}>
-                    {producto.nombre} (Cantidad: {producto.cantidad})
-                  </li>
+                  <li key={index}>{producto.nombre} (Cantidad: {producto.cantidad})</li>
                 ))}
               </ul>
             </div>
@@ -111,26 +120,28 @@ export default function TallerCompletoPage() {
       </section>
       
       <section>
-        <h2>Ejercicio 5 - Lista de blogs profundamente anidada</h2>
+        <h2 style={{ textAlign: 'center', margin: '30px 0', color: '#fff' }}>Ejercicio 5 - Lista de blogs profundamente anidada</h2>
         <div>
           {blogs.map((blog) => (
-            <article key={blog.id} style={{ border: '1px solid #ddd', padding: '15px', marginBottom: '20px', borderRadius: '8px' }}>
-              <h2>{blog.titulo}</h2>
+            <article key={blog.id} style={{ border: '1px solid #444', padding: '20px', marginBottom: '20px', borderRadius: '8px', backgroundColor: '#1e1e1e' }}>
+              <h2 style={{ textAlign: 'center', margin: '20px 0', color: '#fff' }}>{blog.titulo}</h2>
               <p><em>Por: {blog.autor.nombre} ({blog.autor.pais})</em></p>
-              <div><strong>Categorías:</strong> {blog.categorias.join(', ')}</div>
+              <div style={{ color: 'rgba(255,255,255,0.85)' }}>
+                <strong>Categorías:</strong> {blog.categorias.join(', ')}
+              </div>
 
               <div style={{ marginTop: '15px', paddingLeft: '20px' }}>
-                <h4>Comentarios:</h4>
+                <h4 style={{ color: '#fff' }}>Comentarios:</h4>
                 {blog.comentarios.map((comentario, index) => (
-                  <div key={index} style={{ borderLeft: '2px solid #eee', paddingLeft: '15px', marginBottom: '10px' }}>
+                  <div key={index} style={{ borderLeft: '2px solid #555', paddingLeft: '15px', marginBottom: '10px', color: '#fff' }}>
                     <p><strong>{comentario.usuario}:</strong> {comentario.texto}</p>
                     
                     <div style={{ paddingLeft: '20px' }}>
                       {comentario.respuestas.map((respuesta, rIndex) => (
-                        <div key={rIndex} style={{ backgroundColor: '#f9f9f9', padding: '10px', borderRadius: '5px' }}>
+                        <div key={rIndex} style={{ backgroundColor: '#2a2a2a', padding: '10px', borderRadius: '5px', color: '#fff' }}>
                           <p><strong>{respuesta.usuario}:</strong> {respuesta.texto}</p>
 
-                          <ul style={{ fontSize: '0.8em', paddingLeft: '25px' }}>
+                          <ul style={{ fontSize: '0.85em', paddingLeft: '25px', color: 'rgba(255,255,255,0.85)' }}>
                             {respuesta.reacciones.map((reaccion, reaccionIndex) => (
                               <li key={reaccionIndex}>
                                 {reaccion.tipo} por <strong>{reaccion.usuario.nombre}</strong> ({reaccion.usuario.rol})
